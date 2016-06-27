@@ -1,2 +1,5 @@
-# intfocus_style
-intfocus inner code style list
+# 代码风格
+
+- 引用别人，但不以别人为准。
+- 删减、修改成适合自己的。
+- 内部讨论一致时，可随时修改。
