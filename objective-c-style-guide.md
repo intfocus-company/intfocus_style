@@ -2,7 +2,6 @@ referenced: [wonderful-objective-c-style-guide](https://github.com/markeissler/w
 
 # Objective-C style guide.
 
-
 ## Credits
 
 To get here, we leveraged the work of [The official raywenderlich.com Objective-C style guide](https://github.com/raywenderlich/objective-c-style-guide/#methods), [The New York Times Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) and the [Objective-C Cheat Sheet](https://github.com/iwasrobbed/Objective-C-CheatSheet). Many thanks to the contributors to those documents.
@@ -15,42 +14,6 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Cocoa Fundamentals Guide](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/Introduction/Introduction.html)
 * [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 * [iOS App Programming Guide](http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/Introduction/Introduction.html)
-
-## Tools
-
-To assist with the application of the conventions defined herein, I have created an [uncrustify](https://github.com/bengardner/uncrustify) config file (".uncrustify.cfg") that, for the most part, can automatically reformat your code for you and can be used in conjunction with the [BBUncrustifyPlugin-Xcode](https://github.com/benoitsan/BBUncrustifyPlugin-Xcode) plugin. My suggestion is to drop that config file into your project's top directory so that the formatting style is maintained along side the project itself.
-
-**NOTE:** By default, uncrustify does not look for a .uncrustify.cfg file in your project directory. You can specify that location when using uncrustify from the command line with the "-c" flag. If using the Xcode plugin mentioned below you will need to make sure to build and install my forked version until 2.0.4 has been released.
-
-### Why Uncrustify and not Clang-Format?
-
-Let's just get this out of the way right now. While clang-format has come along quite nicely, when it comes down to configurability [uncrustify](https://github.com/bengardner/uncrustify) wins by a great margin. This is especially true for auto formatting objective-c code. Believe me, I started with writing a clang-format config file to support this project, but I quickly learned it wasn't possible to specify all of the formatting requirements.
-
-### BBUncrustifyPlugin-Xcode
-To make it easier to use the supplied uncrustify config file, I suggest installing the excellent [BBUncrustifyPlugin-Xcode](https://github.com/benoitsan/BBUncrustifyPlugin-Xcode) so you can reformat code live from within Xcode. You can install [BBUncrustifyPlugin-Xcode](https://github.com/benoitsan/BBUncrustifyPlugin-Xcode) manually or via the [Alcatraz Xcode package manager](http://alcatraz.io).
-
-Once [BBUncrustifyPlugin-Xcode](https://github.com/benoitsan/BBUncrustifyPlugin-Xcode) has been installed, follow these steps:
-
-* Restart Xcode.
-* Configure BBUncrustifyPlugin:
-
-```
-Edit->Format Code->BBUncrustifyPlugin Preferences...
-```
-
-As seen here:
-![Xcode Page Guide Pref](http://mix-pub-dist.s3-website-us-west-1.amazonaws.com/objective-c-style-guide/img/uncrustify_pref_page_sm.png)
-
-
-### Uncrustify 0.61-snapshot
-
-The current distributed version of [uncrustify](https://github.com/bengardner/uncrustify) has some _shortcomings_ when it comes to formatting objective-c code properly, specifically messages and blocks. I have been working on fixes. :)
-
-While the [BBUncrustifyPlugin-Xcode](https://github.com/benoitsan/BBUncrustifyPlugin-Xcode) comes with its own build of uncrustify, I suggest you [download my snapshot build](http://mix-pub-dist.s3-website-us-west-1.amazonaws.com/objective-c-style-guide/uncrustify-dev-snapshots/uncrustify-0.61-snapshot.zip) and install it in place of the binary used by the Xcode plugin. You should then use the ".uncrustify-061.cfg" config file (make sure you rename it to just ".uncrustify.cfg").
-
-Download my latest uncrustify snapshot:
-
-[uncrustify-0.61-snapshot.zip](http://mix-pub-dist.s3-website-us-west-1.amazonaws.com/objective-c-style-guide/uncrustify-dev-snapshots/uncrustify-0.61-snapshot.zip)
 
 ## Language
 
@@ -161,6 +124,7 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 ```
 
 ## Line Wrapping (Code Width)
+
 Although really big computer displays are the norm these days as they help boost the productivity of engineers, that productivity gain is bound to trend downward if a large portion of that screen real estate must be dedicated to a single code window because of excessively long lines. While automated wrapping may at first appear to be a solution, that feature tosses out all of the gains achieved from proper styling...and therefore efficiency is similarly lost. The better solution is to continue to restrict line width.
 
 Line width is currently restricted to 80 columns. Xcode should be configured to display a Page Guide at 80 columns to assist with manual formatting:
@@ -1106,23 +1070,8 @@ self.productsRequest = [[SKProductsRequest alloc]
   initWithProductIdentifiers:productIdentifiers];
 ```
 
-
 ## Xcode project
 
 The physical files should be kept in sync with the Xcode project files in order to avoid file sprawl. Any Xcode groups created should be reflected by folders in the filesystem. Code should be grouped not only by type, but also by feature for greater clarity.
 
 When possible, always turn on "Treat Warnings as Errors" in the target's Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
-
-# Other Objective-C Style Guides
-
-If ours doesn't fit your tastes, have a look at some other style guides:
-
-* [Robots & Pencils](https://github.com/RobotsAndPencils/objective-c-style-guide)
-* [New York Times](https://github.com/NYTimes/objective-c-style-guide)
-* [Google](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)
-* [GitHub](https://github.com/github/objective-c-conventions)
-* [Adium](https://trac.adium.im/wiki/CodingStyle)
-* [Sam Soffes](https://gist.github.com/soffes/812796)
-* [CocoaDevCentral](http://cocoadevcentral.com/articles/000082.php)
-* [Luke Redpath](http://lukeredpath.co.uk/blog/my-objective-c-style-guide.html)
-* [Marcus Zarra](http://www.cimgf.com/zds-code-style-guide/)
