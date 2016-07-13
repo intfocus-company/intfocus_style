@@ -114,7 +114,7 @@ guide, horizontal rules should span 80 characters for readability.
 
 ## Alphabet and Numberic
 
-中文段落中含字母、数字及特殊符号时，前后各 1 个空格，这样阅读体验会舒服些。
+中文段落中含字母、数字及特殊符号时，前后各 1 个空格，这样阅读体验更佳。
 
 比如:
 
