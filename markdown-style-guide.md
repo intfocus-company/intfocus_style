@@ -112,6 +112,15 @@ guide, horizontal rules should span 80 characters for readability.
     list and because it follows a fenced code block.
     ```
 
+## Alphabet and Numberic
+
+中文段落中含字母、数字及特殊符号时，前后各 1 个空格，这样阅读体验更佳。
+
+比如:
+
+住在美国的英国人 “屠腾罕” 发起拒说 “awesome 运动”, 这件事本身就很 awesome。
+
+
 ## Tables
 
 Like fenced code blocks, tables in Markdown are provided by Markdown Extra
