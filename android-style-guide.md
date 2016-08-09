@@ -178,3 +178,7 @@ drawXXX() | 绘制数据或效果相关的，使用draw前缀标识
 * AutoLoopViewPager 轮播图
 * PhotoView
 * ViewPageIndicator
+
+## TODO
+
+- 常量、宏规范
